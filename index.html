@@ -7,7 +7,15 @@
 		<script src="js/script.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div class="task-bar">
+			<div class="os-icon">
+				<img class="img" src="img/os_logo.png" alt="logo">
+			</div>
+			<div class="tab">shell</div>
+			<div class="tab" id="tab-b">presentation.exe</div>
+		</div>
+
+		<div class="container pres-window">
 			<div class="top">
 				<div class="window-title">presentation.exe</div>
 				<div class="window-buttons">
@@ -18,7 +26,7 @@
 		
 			<div class="content">
 				<h3 id="title"></h3>
-				<p id="text-type"></p>
+				<span class="text" id="text-type"></span>
 			</div>
 
 			<div id="bottom" class="bottom">
@@ -28,6 +36,20 @@
 
 			<div>
 				<div id="bar">25%</div>
+			</div>
+		</div>
+
+		<div class="container shell-window">
+			<div class="top">
+				<div class="window-title">shell</div>
+				<div class="window-buttons">
+					<div class="window-button" id="minimize">_</div>
+					<div class="window-button" id="close">✖</div>
+				</div>
+			</div>
+		
+			<div class="content">
+				<span class="text">(user@localOS) ~ »</span>
 			</div>
 		</div>
 	</body>

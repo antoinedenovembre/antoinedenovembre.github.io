@@ -11,10 +11,68 @@ body {
 	box-sizing: border-box;
 }
 
+.task-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3em;
+	color: #008F11;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding-left: 1em; 
+	border-bottom: 1px solid #008F11;
+}
+
+.os-icon {
+	width: 3em;
+	height: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1em;
+	cursor: pointer;
+}
+
+.img {
+	width: 2em;
+	height: 2em;
+}
+
+.tab {
+	font-size: 15px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-left: 1px solid #008F11;
+	cursor: pointer;
+}
+
+#tab-b {
+	background-color: #008F11;
+	color: black;
+}
+
+.shell-window {
+	height: 15em;
+	overflow: auto;
+	right: 5%;
+	top: 10%;
+	z-index: -1;
+}
+
+.pres-window {
+	right: -10%;
+	top: 55%;
+	z-index: 1;
+}
+
 .container {
 	width: 75%;
 	position: relative;
-	top: 50%;
 	transform: translateY(-50%);
 	margin: 15px auto;
 	border: 3px solid #008F11;
@@ -23,6 +81,7 @@ body {
 .content {
 	padding: 10px;
 	color: #008F11;
+	background-color: black;
 }
 
 .window-button {
@@ -33,6 +92,7 @@ body {
 	background-color: black;
 	color: #008F11;
 	display: inline-block;
+	cursor: pointer;
 }
 
 .top {
@@ -54,8 +114,8 @@ body {
 	width: 25%;
 	height: 30px;
 	background-color: #008F11;
-	text-align: center; /* To center it horizontally (if you want) */
-	line-height: 30px; /* To center it vertically */
+	text-align: center;
+	line-height: 30px;
 	color: black; 
 }
 
@@ -74,7 +134,7 @@ body {
 
 /* unvisited link */
 a:link {
-	color: #00FF41;
+	color: #008F11;
 }
 a:visited {
 	color: #008F11;
@@ -83,12 +143,12 @@ a:hover {
 	color: #008F11;
 }
 
-.span-text {
-	border-right: 1px solid #008F11;
+.text {
+	border-right: .05em solid;
 	animation: caret 1s steps(1) infinite;
 }
 @keyframes caret {
 	50% {
-		border-color: #008F11;
+		border-color: transparent;
 	}
 }

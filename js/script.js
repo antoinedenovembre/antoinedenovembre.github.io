@@ -1,11 +1,13 @@
-document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded',function() {
+	// id for interval
+	var id;
 	// the page we're on
 	let page = 0;
 	// array with texts to type in typewriter
 	var dataText = ["Hi! I'm Antoine, 19, and you're currently using my presentation software",
 	"I have a scientific baccalauréat (equivalent of a british A-level) and am currently studying CompSci in Clermont-Ferrand at Université Clermont Auvergne",
 	"I got to learn many programming languages while studying, such as C, C++, Java, Python, PHP, Javascript, and C# </br> I also have experience with DBMS, OS, networking and UML modeling",
-	"You can contact me through </br> - <a href='https://www.linkedin.com/in/antoine-duteyrat-175166221/'>linkedIn</a> </br> - <a href='mailto:aduteyrat@gmail.com'>email</a> </br> Or you could see my work on <a href='https://github.com/antoinedenovembre'>Github</a>"];
+	"You can contact me through </br> - <a target='_blank' href='https://www.linkedin.com/in/antoine-duteyrat-175166221/'>linkedIn</a> </br> - <a href='mailto:aduteyrat@gmail.com'>email</a> </br> Or you could see my work on <a target='_blank' href='https://github.com/antoinedenovembre'>Github</a>"];
 	// titles array
 	var dataTitle = ["Who am I?", "Scholar", "Known languages", "Contact me"];
 	// percentages array
@@ -19,12 +21,14 @@ document.addEventListener('DOMContentLoaded',function(){
 	btn_next.addEventListener('click', () => {
 		page == dataText.length - 1 ? page = page : page++;
 		clearTimeout(time);
+		clearInterval(id);
 		document.querySelector("#text-type").innerHTML = "";
 		startTextAnimation(page);
 	});
 	btn_pred.addEventListener('click', () => {
 		page == 0 ? page = page : page--;
 		clearTimeout(time);
+		clearInterval(id);
 		document.querySelector("#text-type").innerHTML = "";
 		startTextAnimation(page);
 	});
@@ -91,7 +95,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	function move(width_aimed) {
 		var elem = document.getElementById("bar");
-		var id = setInterval(frame, 10);
+		id = setInterval(frame, 10);
 		function frame() {
 			if (currentPercentage == width_aimed) {
 				clearInterval(id);
