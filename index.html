@@ -9,19 +9,25 @@
 	<body>
 		<div class="container">
 			<div class="top">
-				<span class="square"></span>
-				<span class="square"></span>
-				<span class="square"></span>
+				<div class="window-title">presentation.exe</div>
+				<div class="window-buttons">
+					<div class="window-button" id="minimize">_</div>
+					<div class="window-button" id="close">✖</div>
+				</div>
 			</div>
 		
 			<div class="content">
-				<h3>Who am I?</h3>
+				<h3 id="title"></h3>
 				<p id="text-type"></p>
 			</div>
 
 			<div id="bottom" class="bottom">
 				<button id="btn-pred" class="btn">Pred</button>
 				<button id="btn-next" class="btn">Next</button>
+			</div>
+
+			<div>
+				<div id="bar">25%</div>
 			</div>
 		</div>
 	</body>

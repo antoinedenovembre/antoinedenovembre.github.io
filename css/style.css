@@ -12,7 +12,11 @@ body {
 }
 
 .container {
-	margin: 15px;
+	width: 75%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 15px auto;
 	border: 3px solid #008F11;
 }
 
@@ -21,10 +25,13 @@ body {
 	color: #008F11;
 }
 
-.square {
-	height: 18px;
-	width: 18px;
+.window-button {
+	text-align: center;
+	font-size: 20px;
+	height: 25px;
+	width: 25px;
 	background-color: black;
+	color: #008F11;
 	display: inline-block;
 }
 
@@ -32,7 +39,7 @@ body {
 	padding: 10px;
 	background: #008F11;
 	display: flex;
-    justify-content: right;
+    justify-content: space-between;
 	gap: 10px;
 }
 
@@ -41,6 +48,15 @@ body {
 	background: black;
 	display: flex;
 	justify-content: space-between;
+}
+
+#bar {
+	width: 25%;
+	height: 30px;
+	background-color: #008F11;
+	text-align: center; /* To center it horizontally (if you want) */
+	line-height: 30px; /* To center it vertically */
+	color: black; 
 }
 
 .btn {
@@ -56,12 +72,23 @@ body {
 	color: black;
 }
 
+/* unvisited link */
+a:link {
+	color: #00FF41;
+}
+a:visited {
+	color: #008F11;
+}
+a:hover {
+	color: #008F11;
+}
+
 .span-text {
-	border-right: .05em solid #008F11;
+	border-right: 1px solid #008F11;
 	animation: caret 1s steps(1) infinite;
 }
 @keyframes caret {
 	50% {
-	border-color: transparent;
+		border-color: #008F11;
 	}
 }
