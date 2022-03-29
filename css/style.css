@@ -12,12 +12,14 @@ body {
 }
 
 .task-bar {
+	z-index: 2;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 3em;
 	color: #008F11;
+	background-color: black;
 	display: flex;
 	align-items: center;
 	justify-content: left;
@@ -40,43 +42,24 @@ body {
 	height: 2em;
 }
 
-.tab {
-	font-size: 15px;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-left: 1px solid #008F11;
-	cursor: pointer;
-}
-
-#tab-b {
-	background-color: #008F11;
-	color: black;
-}
-
 .shell-window {
 	height: 15em;
 	overflow: auto;
-	right: 5%;
-	top: 5%;
-	z-index: -1;
-}
-
-.pres-window {
-	right: -10%;
-	top: 55%;
-	z-index: 1;
-	background-color: black;
 }
 
 .container {
+	top: 50%;
+	z-index: 0;
 	width: 75%;
 	position: relative;
 	transform: translateY(-50%);
 	margin: 15px auto;
 	border: 3px solid #008F11;
+	background-color: black;
+}
+
+.hidden {
+	display: none;
 }
 
 .content {
@@ -133,6 +116,29 @@ body {
 	color: black;
 }
 
+.btn-tab {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 15px;
+	background: black;
+	color: #008F11;
+	border-left: 1px solid #008F11;
+	border-right: none;
+	border-bottom: none;
+	border-top: none;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.btn-selected {
+	background: #008F11;
+	color: black;
+}
+
 /* unvisited link */
 a:link {
 	color: #008F11;
@@ -152,4 +158,20 @@ a:hover {
 	50% {
 		border-color: transparent;
 	}
+}
+
+.prompt {
+	animation: none;
+	border-right: none;
+}
+
+.command {
+	background-color: black;
+	color: #008F11;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 15px;
+}
+
+.command:focus {
+	outline: none;
 }

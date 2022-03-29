@@ -114,3 +114,17 @@ document.addEventListener('DOMContentLoaded',function() {
 	// start the text animation
 	startTextAnimation(page);
 });
+
+function onClickShell() {
+	document.getElementById("btn-shell").className = "btn-tab btn-selected";
+	document.getElementById("btn-pres").className = "btn-tab";
+	document.getElementById("shell-window").className = "container shell-window";
+	document.getElementById("pres-window").className = "container hidden";
+}
+
+function onClickPres() {
+	document.getElementById("btn-pres").className = "btn-tab btn-selected";
+	document.getElementById("btn-shell").className = "btn-tab";
+	document.getElementById("pres-window").className = "container";
+	document.getElementById("shell-window").className = "container hidden";
+}

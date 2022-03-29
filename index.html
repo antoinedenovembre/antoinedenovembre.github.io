@@ -11,11 +11,15 @@
 			<div class="os-icon">
 				<img class="img" src="img/os_logo.png" alt="logo">
 			</div>
-			<div class="tab">shell</div>
-			<div class="tab" id="tab-b">presentation.exe</div>
+			<button id="btn-shell" class="btn-tab" onclick="onClickShell()">
+				<div class="tab">shell</div>
+			</button>
+			<button id="btn-pres" class="btn-tab btn-selected" onclick="onClickPres()">
+				<div class="tab" id="tab-b">presentation.exe</div>
+			</button>
 		</div>
 
-		<div class="container pres-window">
+		<div id="pres-window" class="container pres-window">
 			<div class="top">
 				<div class="window-title">presentation.exe</div>
 				<div class="window-buttons">
@@ -39,7 +43,7 @@
 			</div>
 		</div>
 
-		<div class="container shell-window">
+		<div id="shell-window" class="container shell-window hidden">
 			<div class="top">
 				<div class="window-title">shell</div>
 				<div class="window-buttons">
@@ -49,7 +53,8 @@
 			</div>
 		
 			<div class="content">
-				<span class="text">(user@localOS) ~ »</span>
+				<span class="text prompt">(user@localOS) ~ »</span>
+				<input type="text" id="input" class="command">
 			</div>
 		</div>
 	</body>
