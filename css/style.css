@@ -60,7 +60,7 @@ body {
 	height: 15em;
 	overflow: auto;
 	right: 5%;
-	top: 10%;
+	top: 5%;
 	z-index: -1;
 }
 
@@ -68,6 +68,7 @@ body {
 	right: -10%;
 	top: 55%;
 	z-index: 1;
+	background-color: black;
 }
 
 .container {
@@ -116,7 +117,7 @@ body {
 	background-color: #008F11;
 	text-align: center;
 	line-height: 30px;
-	color: black; 
+	color: black;
 }
 
 .btn {
