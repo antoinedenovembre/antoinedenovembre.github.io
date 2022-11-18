@@ -11,6 +11,21 @@ body {
 	box-sizing: border-box;
 }
 
+.os-icon {
+	width: 3em;
+	height: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1em;
+	cursor: pointer;
+}
+
+.img {
+	width: 2em;
+	height: 2em;
+}
+
 .task-bar {
 	z-index: 2;
 	position: fixed;
@@ -27,47 +42,6 @@ body {
 	border-bottom: 1px solid #008F11;
 }
 
-.os-icon {
-	width: 3em;
-	height: 3em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 1em;
-	cursor: pointer;
-}
-
-.img {
-	width: 2em;
-	height: 2em;
-}
-
-.shell-window {
-	height: 15em;
-	overflow: auto;
-}
-
-.container {
-	top: 50%;
-	z-index: 0;
-	width: 75%;
-	position: relative;
-	transform: translateY(-50%);
-	margin: 15px auto;
-	border: 3px solid #008F11;
-	background-color: black;
-}
-
-.hidden {
-	display: none;
-}
-
-.content {
-	padding: 10px;
-	color: #008F11;
-	background-color: black;
-}
-
 .window-button {
 	text-align: center;
 	font-size: 20px;
@@ -80,11 +54,40 @@ body {
 }
 
 .top {
+	width: 100%;
 	padding: 10px;
 	background: #008F11;
 	display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
 	gap: 10px;
+	top: 0;
+}
+
+.container {
+	top: 50%;
+	z-index: 0;
+	width: 75%;
+	position: relative;
+	transform: translateY(-50%);
+	margin: 15px auto;
+	border: 3px solid #008F11;
+	background-color: black;
+	border-radius: 2px;
+}
+
+.shell-window {
+	height: 20em;
+	overflow: auto;
+}
+
+.hidden {
+	display: none;
+}
+
+.content {
+	padding: 10px;
+	color: #008F11;
+	background-color: black;
 }
 
 .bottom {
@@ -111,6 +114,7 @@ body {
 	padding: 10px;
 	margin: 10px;
 }
+
 .btn:hover {
 	background: #008F11;
 	color: black;
@@ -166,10 +170,12 @@ a:hover {
 }
 
 .command {
+	border: none;
 	background-color: black;
 	color: #008F11;
 	font-family: 'Roboto Mono', monospace;
 	font-size: 15px;
+	width: 320px;
 }
 
 .command:focus {

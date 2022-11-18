@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded',function() {
 	// the page we're on
 	let page = 0;
 	// array with texts to type in typewriter
-	var dataText = ["Hi! I'm Antoine, 19, and you're currently using my presentation software",
-	"I have a scientific baccalauréat (equivalent of a british A-level) and am currently studying CompSci in Clermont-Ferrand at Université Clermont Auvergne",
-	"I got to learn many programming languages while studying, such as C, C++, Java, Python, PHP, Javascript, and C# </br> I also have experience with DBMS, OS, networking and UML modeling",
+	var dataText = ["Hi there, I'm Antoine, French student, 20, and you're currently using my presentation website",
+	"I have a scientific baccalauréat (equivalent of a british A-level) and a technical bachelor's degree in CompSci </br> I'm currently studying image processing and engineering at Telecom Saint-Etienne",
+	"I got to learn many programming languages while studying, such as C, C++, Java, Python, PHP, Javascript, and C# </br> I also have experience with DBMS, OS, networking and UML modeling </br> I'm currently learning about image processing and computer vision",
 	"You can contact me through </br> - <a target='_blank' href='https://www.linkedin.com/in/antoine-duteyrat-175166221/'>linkedIn</a> </br> - <a href='mailto:aduteyrat@gmail.com'>email</a> </br> Or you could see my work on <a target='_blank' href='https://github.com/antoinedenovembre'>Github</a>"];
 	// titles array
 	var dataTitle = ["Who am I?", "Scholar", "Known languages", "Contact me"];
@@ -97,17 +97,14 @@ document.addEventListener('DOMContentLoaded',function() {
 		var elem = document.getElementById("bar");
 		id = setInterval(frame, 10);
 		function frame() {
-			if (currentPercentage == width_aimed) {
+			if (currentPercentage == width_aimed)
 				clearInterval(id);
-			} else if (currentPercentage < width_aimed) {
+			else if (currentPercentage < width_aimed)
 				currentPercentage++;
-				elem.style.width = currentPercentage + "%";
-				elem.innerHTML = currentPercentage + "%";
-			} else {
+			else
 				currentPercentage--;
-				elem.style.width = currentPercentage + "%";
-				elem.innerHTML = currentPercentage + "%";
-			}
+			elem.style.width = currentPercentage + "%";
+			elem.innerHTML = currentPercentage + "%";
 		}
 	}
 
@@ -127,4 +124,59 @@ function onClickPres() {
 	document.getElementById("btn-shell").className = "btn-tab";
 	document.getElementById("pres-window").className = "container";
 	document.getElementById("shell-window").className = "container hidden";
+}
+
+let id_prompt = "input-prompt";
+
+function onEnterCommand(command) {
+	// deprecated but no other way to do it
+	if(KeyboardEvent.code === 13 || event.keyCode === 13) {
+		var shell = document.getElementById("shell-content");
+
+		// building result
+		var new_line = document.createElement('div');
+		new_line.className = "text prompt";
+		new_line.innerHTML = commandOutput(command);
+		shell.appendChild(new_line);
+
+		// getting the prompt down
+		var prompt_line = document.getElementById(id_prompt);
+		prompt_line.disabled = true;
+		var new_prompt = document.createElement('span');
+		new_prompt.className = "text prompt";
+		new_prompt.innerHTML = "(user@localOS) ~ » ";
+		var new_prompt_line = document.createElement('input');
+		id_prompt = "input-prompt" + Math.floor(Math.random() * 100);
+		new_prompt_line.id = id_prompt;
+		new_prompt_line.className = "command";
+		new_prompt_line.type = "text";
+		shell.appendChild(new_prompt);
+		shell.appendChild(new_prompt_line);
+		new_prompt_line.addEventListener('keydown', () => onEnterCommand(new_prompt_line.value));
+		new_prompt_line.focus();
+	} else {
+		return;
+	}
+}
+
+function commandOutput(input) {
+	switch(input) {
+		case "help" : 
+			return "'help' - displays all the available commands.</br>'whoami' - displays the presentation</br>'projects' - displays my github link</br>'socials' - \
+				displays my socials links";
+
+		case "whoami" :
+			return "Hi there, I'm Antoine, French student, 20, and you're currently using my presentation website";
+
+		case "projects" :
+			window.open('https://github.com/antoinedenovembre', '_blank').focus()
+			return "";
+
+		case "socials" :
+			return "<a target='_blank' href='https://www.linkedin.com/in/antoine-duteyrat-175166221/'>linkedIn</a>; <a href='mailto:aduteyrat@gmail.com'>email</a>; \
+				<a target='_blank' href='https://github.com/antoinedenovembre'>Github</a>"
+
+		default :
+			return "command not found";
+	}
 }
