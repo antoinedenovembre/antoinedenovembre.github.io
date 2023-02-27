@@ -180,3 +180,6 @@ function commandOutput(input) {
 			return "command not found";
 	}
 }
+
+// TODO : add a command to display the ip address
+// TODO : fix the bar at the top of shell container
